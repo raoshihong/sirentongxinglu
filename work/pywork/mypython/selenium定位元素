@@ -1,0 +1,24 @@
+from selenium import webdriver
+
+url = "https://www.baidu.com"
+# 在mac下如果驱动在bin目录或者path环境下可以不用写路径
+brower = webdriver.Chrome()
+brower.get(url)
+
+# 根据id定位
+btn = brower.find_element_by_xpath("//input[@id='su']")
+
+print(btn)
+
+# 获取元素到信息
+value = btn.get_attribute("value")
+print(value)
+tag_name = btn.tag_name
+print(tag_name)
+
+xx = brower.find_elements_by_xpath("//form[@name='f']")[0]
+
+print(xx)
+print("xxx=",xx.find_element_by_xpath("//input[@id='su']"))
+
+
